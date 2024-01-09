@@ -42,12 +42,13 @@ public class Campeonato {
 		
 		
 				
+		int ProgramadoresExhibicion [] = Arrays.copyOf(Programadores, Programadores.length);
 
 		 
 		  while (Valores != -1) {
 			  
-			int ProgramadoresExhibicion [] = Arrays.copyOf(Programadores, Programadores.length + 1);
 
+			ProgramadoresExhibicion = Arrays.copyOf(ProgramadoresExhibicion, ProgramadoresExhibicion.length + 1); 
 			Valores = Puntuaciones.nextInt();
 			
 			 Arrays.sort(ProgramadoresExhibicion);
@@ -62,4 +63,4 @@ public class Campeonato {
 		  Puntuaciones.close();
 		  
 	}
-	
+}
