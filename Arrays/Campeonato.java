@@ -56,8 +56,8 @@ public class Campeonato {
 					
 		 }
 		  
-		 
-		  
+		  Arrays.sort(ProgramadoresExhibicion);
+		  System.out.println(Arrays.toString(ProgramadoresExhibicion));
 		 
 		  
 		  Puntuaciones.close();
