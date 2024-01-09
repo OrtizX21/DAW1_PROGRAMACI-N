@@ -1,9 +1,9 @@
-package Pruebas;
+package Arrays;
 
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Campeonato_Prueba {
+public class Campeonato {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -24,49 +24,41 @@ public class Campeonato_Prueba {
 		
 		System.out.println("Introduce La Puntuación De Los Programadores:");
 		
-		int valores = 0;
-		
-		int valoresExhibicion = 0;
-		
+		int Valores = 0;
 		int Programadores[] = new int [5];
 		
 		
 		for (int i = 0; i < Programadores.length; i++) {
 			
-			Programadores[i] = valores = Puntuaciones.nextInt();
+			Programadores[i]  = Puntuaciones.nextInt();
 						
 			System.out.println(Arrays.toString(Programadores));
-			
-			
-			
+				
 		}
 		
 		Arrays.sort(Programadores);
 		
 		System.out.println(Arrays.toString(Programadores));
+		
+		
 				
-		System.out.println("Estos son los valores: " + valores);
-		
-		
-		
-		  while (valores != -1) {
-			  
-			  if (valores == -1) { 
-				  
-				  System.out.println("Fin Del Programa");
-				  System.exit(0);
-			  }
-			 
-			  
-			Puntuaciones.nextInt();
 
-			
-			int ProgramadoresExhibicion [] = new int [Programadores.length];
+		 
+		  while (Valores != -1) {
+			  
+			int ProgramadoresExhibicion [] = Arrays.copyOf(Programadores, Programadores.length + 1);
 
-			System.arraycopy(Programadores, valores, ProgramadoresExhibicion, 0, Programadores.length);
-			
-		  
+			Valores = Puntuaciones.nextInt();
+					
 		 }
+		  
+		  Arrays.sort(Programadores);
+		  System.out.println(Arrays.toString(ProgramadoresExhibicion));
+		  
+		 
+		  
+		  Puntuaciones.close();
+		  
 	}
-
+	
 }
