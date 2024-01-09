@@ -49,11 +49,13 @@ public class Campeonato {
 			int ProgramadoresExhibicion [] = Arrays.copyOf(Programadores, Programadores.length + 1);
 
 			Valores = Puntuaciones.nextInt();
+			
+			 Arrays.sort(ProgramadoresExhibicion);
+			  System.out.println(Arrays.toString(ProgramadoresExhibicion));
 					
 		 }
 		  
-		  Arrays.sort(Programadores);
-		  System.out.println(Arrays.toString(ProgramadoresExhibicion));
+		 
 		  
 		 
 		  
@@ -61,4 +63,3 @@ public class Campeonato {
 		  
 	}
 	
-}
