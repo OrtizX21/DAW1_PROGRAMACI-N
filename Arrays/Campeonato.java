@@ -25,7 +25,6 @@ public class Campeonato {
 		System.out.println("Introduce La Puntuación De Los Programadores:");
 		
 		int Programadores[] = new int [5];
-		int Valores = Programadores.length ;
 
 		
 		
@@ -33,36 +32,40 @@ public class Campeonato {
 			
 			Programadores[i]  = Puntuaciones.nextInt();
 						
-			System.out.println(Arrays.toString(Programadores));
 				
 		}
 		
 		Arrays.sort(Programadores);
 		
 		System.out.println(Arrays.toString(Programadores));
-		
-		
-				
-		int ProgramadoresExhibicion [] = Arrays.copyOf(Programadores, Programadores.length + 1);
-		
-		
 
-		  while (Valores != -1) {
+		
+		
+		
+		
+		int PromExhibicion [] = Arrays.copyOf(Programadores, Programadores.length);
+		
+		int Longitud = Puntuaciones.nextInt();
+
+
+
+		  while (Longitud != -1) {
+		
+		
+		PromExhibicion = Arrays.copyOf(PromExhibicion, PromExhibicion.length + 1); 
+		
+		PromExhibicion[PromExhibicion.length-1] =  Longitud;
+		 
+			  Longitud = Puntuaciones.nextInt();
 			  
-			ProgramadoresExhibicion = Arrays.copyOf(Programadores, ProgramadoresExhibicion.length + 1); 
-			Valores = Puntuaciones.nextInt();
-			
-			  System.out.println(Arrays.toString(ProgramadoresExhibicion));
-					
 		 }
 		  
-		  Arrays.sort(ProgramadoresExhibicion);
-		  System.out.println(Arrays.toString(ProgramadoresExhibicion));
+		  Arrays.sort(PromExhibicion);
+		  System.out.println(Arrays.toString(PromExhibicion));
 
 		 
-		  Puntuaciones.close();
-		  
+		  Puntuaciones.close();  
 	}
-}
-	}
+
+	
 }
