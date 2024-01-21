@@ -1,11 +1,52 @@
 package Arrays;
 import java.util.*;
-
 public class Cámara_Secreta {
-
+	
+	
+	public static int[] Aleatoria(int Secreta[]) {
+		
+		for (int j = 0; j < Secreta.length; j++) {
+			Secreta[j] = (int) (Math.random() * 5 + 1);
+		}
+		
+		return Secreta;
+	}
+	
+	
+	public static int[] Apuesta(int Apuesta[]) {
+		
+		Scanner Numero = new Scanner(System.in);
+		
+		for (int k = 0; k < Apuesta.length; k++) {
+			
+			Apuesta[k] = Numero.nextInt();
+		}
+		return Apuesta;
+	}
+	
+	
+	public static int[] Pistas(int Secreta[], int Combinacion[]) {
+		
+		for (int i = 0; i < Combinacion.length; i++) {
+			
+			if (Secreta[i] > Combinacion[i]) {
+				System.out.println(Combinacion[i] + ": El Numero Esta En Un Rango Mayor\n");
+			}
+			
+			else if (Secreta[i] < Combinacion[i]) {
+				System.out.println(Combinacion[i] + ": El Numero Esta En Un Rango Menor\n");
+			}
+			
+			else {
+				System.out.println(Combinacion[i] + " Los Numeros Son Iguales.\n");
+			}
+		}
+		return Combinacion;
+	}
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
 		/*
 		 * Desarrollar el juego "la cámara secreta" que consiste en abrir una cámara
 		 * mediante su combinación secreta, que está formada por una combinación de
@@ -17,41 +58,30 @@ public class Cámara_Secreta {
 		 * correspondiente en la combinación secreta
 		 */
 		
-		System.out.println("!INICIAMOS EL JUEGO DE CÁMARA SECRETA¡");
 		
-		Scanner Clave = new Scanner (System.in);
-		
-		System.out.println("!Empezamos El Juego¡");
-		
-		int Apuesta;
-		Apuesta = Clave.nextInt();
-
-		System.out.println("Introduce La Combinación:");
-
-	
-		int CombinacionSecreta [] = new int [5];	
-		int Combinacion[] = new int [5];
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Introduce La Longitud De La Camara:");
+		int valores = entrada.nextInt();
 		
 		
-		for (int k = 0; k < Apuesta; k++) {
+		int Clave[] = new int[valores];
+		int MiClave[] = new int[valores];
+		
+		Aleatoria(Clave);
+		System.out.println("Introduce Los Numeros Del Array Apuesta:");
+		
+		
+		Apuesta(MiClave);
+		
+		
+		while (!Arrays.equals(Clave, MiClave)) {
 			
-			Combinacion[k] = Clave.nextInt();
-			
-			System.out.println(Combinacion[k]);
+			Pistas(Clave, MiClave);
+			System.out.println("Escribe La Combinacion: \n");
+			Apuesta(MiClave);
 		}
 		
-		System.out.println(Arrays.toString(Combinacion));
-		
-		
-		for (int j = 0; j < CombinacionSecreta.length; j++) {
-			
-			CombinacionSecreta[j] = (int) (Math.random() * 5) + 1;
-			
-			System.out.print(CombinacionSecreta[j]);	
-		}
-		
-		
-		Clave.close();
+		System.out.println("!Fin Del Juego Cámara Abierta¡");
+		entrada.close();
 	}
-
 }
