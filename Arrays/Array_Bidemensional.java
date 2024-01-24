@@ -16,17 +16,27 @@ public class Array_Bidemensional {
 		int [][] matriz = new int[5][6];
 
 		
-		for (int n = 0; n < 5; n++) {
+		for (int n = 0; n < matriz.length; n++) {
 			
 			System.out.println();
 			
-			for (int m = 0; m < 6 ; m++) {
+			for (int m = 0; m < matriz[0].length ; m++) {
 				
-				matriz [n][m] = (10 * m + n);
+				matriz [n][m] = (10 * n + m);
 			}
 		}
 	
 		System.out.print(Arrays.deepToString(matriz));
+		
+		
+		for (int fila [] : matriz) {
+			
+			for (int columna : fila) {
+				
+				System.out.println(columna + " ");
+
+			}
+		}
 		
 	}
 
