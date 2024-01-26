@@ -10,10 +10,12 @@ public class Array_Bidemensional {
 
 		int[][] matriz = new int[5][4];
 
+		// FILAS MATRIZ.LENGTH
 		for (int n = 0; n < matriz.length; n++) {
 
 			System.out.println();
 
+			// COLUMNAS MATRIZ[0].LENGTH
 			for (int m = 0; m < matriz[0].length; m++) {
 
 				matriz[n][m] = (10 * n + m);
