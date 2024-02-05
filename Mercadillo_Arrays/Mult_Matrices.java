@@ -1,7 +1,33 @@
-package Arrays_Bidemensionales;
+package Arrays_Bidimensional;
 import java.util.*;
 
 public class Mult_Matrices {
+	
+	static void ProductoMatrices (int t1[][], int t2[][]) {
+		
+		int[][] Multiplica = new int[t1.length][t2[0].length];
+
+
+		// FILAS DE LA MATRIZ UNO
+		for (int i = 0; i < t1.length; i++) {
+
+			// COLUMNAS DE LA MATRIZ DOS
+			for (int j = 0; j < t2[0].length; j++) {
+
+				// COLUMNAS DE LA MATRIZ UNO
+				for (int k = 0; k < t1[0].length; k++) {
+
+					Multiplica[i][j] += t1[i][k] * t2[k][j];
+				}
+			}
+			
+		}
+	
+
+	System.out.println(Arrays.deepToString(Multiplica));
+
+		
+	}
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -12,36 +38,18 @@ public class Mult_Matrices {
 		 * multiplicación de matrizUno x matrizDos.
 		 */
 
-		int[][] matrizUno = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
+	
+		int[][] matrizUno = { { 1, 2, 3 }, 
+				              { 4, 5, 6 }, 
+				              { 7, 8, 9 } };
 
-		int[][] matrizDos = { { 1, 4, 7, }, { 2, 5, 8, }, { 3, 6, 9 } };
-
-		int[][] productoMatrices = new int[matrizUno.length][matrizDos[0].length];
-
-		if (matrizUno[0].length != matrizDos.length) {
-
-			System.out.println("NO SE PUEDE REALIZAR EL CALCULO");
-		}
-
-		else {
-
-			// FILAS DE LA MATRIZ UNO
-			for (int i = 0; i < matrizUno.length; i++) {
-
-				// COLUMNAS DE LA MATRIZ DOS
-				for (int j = 0; j < matrizDos[0].length; j++) {
-
-					// COLUMNAS DE LA MATRIZ UNO
-					for (int k = 0; k < matrizUno[0].length; k++) {
-
-						productoMatrices[i][j] += matrizUno[i][k] * matrizDos[k][j];
-					}
-				}
-			}
-		}
-
-		System.out.println(Arrays.deepToString(productoMatrices));
-
+		int[][] matrizDos = { { 1, 4, 7, }, 
+				              { 2, 5, 8, }, 
+				              { 3, 6, 9 } };
+		
+		
+		ProductoMatrices(matrizUno, matrizDos);
+			
 	}
 
 }
