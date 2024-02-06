@@ -1,36 +1,27 @@
 package Mercadillo_Arrays;
+
 import java.util.*;
 
 public class Mercadillo1 {
 
 	static int[] buscarTodos(int t[], int clave) {
 
+		int tab1 [] = new int[0];
+
 		for (int i = 0; i < t.length; i++) {
 
-			int [] tNueva = new int [0];
-			
 			if (t[i] == clave) {
-
-				System.out.println("El Número " + clave + " Está En La Posición " + i + " De La Tabla");
 				
-				tNueva = Arrays.copyOf(t, t.length + 1);
-			}
+				tab1 = Arrays.copyOf(tab1, tab1.length + 1);
 
-			else {
-				
-				int[] t1 = new int[0];
-
-				System.out.println("Valor No Encontrado Devolvemos Tabla Vacia: " + t1);
+				tab1[tab1.length - 1] = i;
 
 			}
-			
-			System.out.print(Arrays.toString(tNueva));
-
 
 		}
 
-		
-		
+		System.out.println(Arrays.toString(tab1));
+
 		return t;
 	}
 
@@ -44,11 +35,11 @@ public class Mercadillo1 {
 		 * la función devolverá una tabla vacía.
 		 */
 
-		int[] Tabla1 = { 11, 12, 13, 14, 11, 11 };
+		int[] Tabla1 = { 11, 12, 13, 14, 15, 11, 12};
 
-		int Key = 11;
+		int Clave = 12;
 
-		buscarTodos(Tabla1, Key);
+		buscarTodos(Tabla1, Clave);
 	}
 
 }
