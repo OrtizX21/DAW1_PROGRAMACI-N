@@ -1,23 +1,32 @@
 package Mercadillo_Arrays;
+
 import java.util.Arrays;
 
 public class Mercadillo2 {
 
+	static int[] Desordenar(int tabla[]) {
 
-	static int [] desordenar (int tabla[]) {
-		
-		
 		for (int i = 0; i < tabla.length; i++) {
-			
-			tabla[i] = (int) (Math.random()*100);
+
+			// GENERA NUMERO ALE.
+			int NumeroRandom = (int) (Math.random() * tabla.length);
+
+			// GUARDA EN LA VARIABLE POS LOS VALORES DE LA TABLA.
+			int Pos = tabla[i];
+
+			// DESPUES EN LOS VALORES DE LA TABLA GUARDAMOS LOS VALORES ALEATORIOS
+			// GENERADOS.
+			tabla[i] = tabla[NumeroRandom];
+
+			// POR ULTIMO LA VARIABLE RANDOM SE GUARDAN LOS VALORES EN LAS POSICIONES.
+			tabla[NumeroRandom] = Pos;
 		}
-		
+
 		System.out.println(Arrays.toString(tabla));
-		
+
 		return tabla;
 	}
 
-	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -26,13 +35,11 @@ public class Mercadillo2 {
 		 * aleatoria los elementos contenidos en la tabla t, si la tabla estuviera
 		 * ordenada dejaría de estarlo.
 		 */
-		
-		int tablaordenada [] = {11,12,13,14,15,16};
-		
-		desordenar(tablaordenada);
-		
-		}
+
+		int Tabla1[] = { 11, 12, 13, 14, 15, 16 };
+
+		Desordenar(Tabla1);
 
 	}
 
-
+}
