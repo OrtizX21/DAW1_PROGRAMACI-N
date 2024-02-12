@@ -6,13 +6,25 @@ public class Hundir_Flota {
 
 	static void TableroAgua(char[][] Jugador) {
 
-		for (int i = 1; i <= 10; i++) {
+		for (int i = 0; i < Jugador.length; i++) {
 
-			for (int j = 1; j <= 10; j++) {
+			for (int j = 0; j < Jugador[0].length; j++) {
 
-				System.out.print("~ ");
+				Jugador[i][j] = '~';
 			}
 
+		}
+	}
+	
+	static void MostrarTablero (char [][] Tabla) {
+		
+		for (int k = 0; k < Tabla.length; k++) {
+			
+			for (int j = 0; j < Tabla[0].length; j++) {
+				
+				System.out.print(Tabla [k][j] + " ");
+			}
+			
 			System.out.println();
 		}
 	}
@@ -53,9 +65,9 @@ public class Hundir_Flota {
 
 	static void PonerBarcos(char[][] Barco, int Longitud) {
 
-		char [][] PortaAviones = new char [5][5];
-		
-		char [][] Acorazado = new char [4][4];
+		//char [][] PortaAviones = new char [5][5];
+			
+		//char [][] Acorazado = new char [4][4];
 	}
 
 	
@@ -65,6 +77,7 @@ public class Hundir_Flota {
 		// TABLEROS DE LOS JUGADORES (PANTALLA PARA LOS DISPAROS).
 		char[][] TJugador1 = new char[12][12];
 		TableroAgua(TJugador1);
+		MostrarTablero(TJugador1);
 
 		// char[][] TJugador2 = new char[12][12];
 		// TableroAgua(TJugador2);
