@@ -3,19 +3,9 @@ package Character;
 import java.util.*;
 
 public class Acierta_Palabra {
-
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
-		/*
-		 * Diseña el juego "acierta la contraseña". La mecánica del juego es la
-		 * siguiente: el primer jugador introduce la contraseña; a continuación, el
-		 * segundo jugador debe teclear palabras hasta que la acierte. Como pistas se
-		 * debe decir si la palabra introducida alfabéticamente mayor o menor que la
-		 * contraseña.
-		 * 
-		 * Ayuda: puedes usar los métodos 'equals' y 'compareTo' de la clase String
-		 */
+	
+	static void JuegoPalabra () {
+		
 
 		System.out.println("!INICIAMOS EL JUEGO DE ACIERTA LA PALABRA¡");
 		Scanner sc = new Scanner(System.in);
@@ -47,6 +37,24 @@ public class Acierta_Palabra {
 		System.out.println("!Has Adivinado La Contraseña¡");
 
 		sc.close();
+		
+	}
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		/*
+		 * Diseña el juego "acierta la contraseña". La mecánica del juego es la
+		 * siguiente: el primer jugador introduce la contraseña; a continuación, el
+		 * segundo jugador debe teclear palabras hasta que la acierte. Como pistas se
+		 * debe decir si la palabra introducida alfabéticamente mayor o menor que la
+		 * contraseña.
+		 * 
+		 * Ayuda: puedes usar los métodos 'equals' y 'compareTo' de la clase String
+		 */
+
+		
+		JuegoPalabra();
 
 	}
 
