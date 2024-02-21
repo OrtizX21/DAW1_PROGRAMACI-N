@@ -1,6 +1,6 @@
 package Pruebas_POO;
 
-import POO.Cuenta_Corriente;
+//import POO.Cuenta_Corriente;
 
 public class Prueba_Eje1 {
 
