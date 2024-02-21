@@ -1,10 +1,19 @@
 package POO;
 
+
+    /*En la clase CuentaCorriente sobrecargar los constructores para poder crear objetos
+    - con el DNI del titular de la cuenta y un saldo inicial
+    - con el DNI, nombre y el saldo inicial
+
+    Escribir un programa que compruebe el funcionamiento de los métodos*/
+
 	public class Cuenta_Corriente {
 
 	String Dni; // DNI TITULAR.
 
-	public String Nombre; // NOMBRE TITULAR.
+	public String NombreD; // NOMBRE TITULAR.
+	
+	public String NombreP; // NOMBRE PERSONA.
 
 	private double Saldo_Inicial;
 
@@ -12,7 +21,7 @@ package POO;
 
 		this.Dni = Dni;
 
-		this.Nombre = Nombre;
+		this.NombreD = Nombre;
 
 		Saldo_Inicial = 0;
 
@@ -29,15 +38,15 @@ package POO;
 	public Cuenta_Corriente() { // ASIGNACION VALORES CONSTRUCTOR.
 
 		Dni = "";
-		Nombre = "";
+		NombreD = "";
 		Saldo_Inicial = 0;
 
 	}
 
-	Cuenta_Corriente(String Dni, String Nombre, double Saldo_Inicial) { // SOBRECARGA CONSTRUCTOR.
+	Cuenta_Corriente(String Dni, String NombreP, double Saldo_Inicial) { // SOBRECARGA CONSTRUCTOR.
 
 		this.Dni = Dni;
-		this.Nombre = Nombre;
+		this.NombreP = NombreP;
 		this.Saldo_Inicial = Saldo_Inicial;
 	}
 
@@ -51,7 +60,7 @@ package POO;
 
 	void Datos() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR PADRE).
 
-		System.out.println("Nombre: " + Nombre);
+		System.out.println("Nombre: " + NombreD);
 
 		System.out.println("Dni: " + Dni);
 
@@ -59,7 +68,7 @@ package POO;
 
 	void Datos1() {//  FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR SOBRECARGADO).
 
-		System.out.println("Nombre: " + Nombre);
+		System.out.println("Nombre: " + NombreP);
 
 		System.out.println("Dni: " + Dni);
 
