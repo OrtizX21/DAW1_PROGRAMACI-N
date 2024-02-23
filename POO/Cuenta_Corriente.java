@@ -1,5 +1,5 @@
 package POO;
-import java.util.*;
+//import java.util.*;
 
 /*En la clase CuentaCorriente sobrecargar los constructores para poder crear objetos
 - con el DNI del titular de la cuenta y un saldo inicial
@@ -17,22 +17,17 @@ public class Cuenta_Corriente {
 
 	private double Saldo_Inicial; // SALDO INCIAL DE LA CUENTA.
 
-	static String Banco = "BBVA"; // NOMBRE DEL BANCO DEL TITULAR Y PERSONA.
+	static String Banco = "BBVA"; // BANCO PREDETERMINADO NOMBRE DEL BANCO DEL TITULAR Y PERSONA.
+	
+	static private String BancoNuevo = "Ibercaja"; // METODO PARA CAMBIARLE EL NOMBRE AL BANCO PREDETERMINADO.
 
-	Cuenta_Corriente(String Dni, String Nombre, String Banco) { // CONSTRUCTOR PADRE.
+	
+	Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR PADRE.
 
-		Scanner sc = new Scanner (System.in);
 		
 		this.Dni = Dni;
 
 		this.NombreD = Nombre;
-
-		Saldo_Inicial = 0;
-
-		System.out.println("Dime el banco");
-		this.Banco = sc.nextLine();
-		
-		sc.close();
 
 	}
 
@@ -44,23 +39,26 @@ public class Cuenta_Corriente {
 
 	// Y SIN NINGUNO DE ELLOS SE VEN SOLO DENTRO DE ESE MISMO PAQUETE.
 
+	
 	public Cuenta_Corriente() { // ASIGNACION VALORES CONSTRUCTOR.
 
 		Dni = "";
 		NombreD = "";
 		Saldo_Inicial = 0;
-		Banco = Banco;
+		Banco = "";
 
 	}
 
+	
 	Cuenta_Corriente(String Dni, String NombreP, double Saldo_Inicial, String Banco) { // SOBRECARGA CONSTRUCTOR.
 
 		this.Dni = Dni;
 		this.NombreP = NombreP;
 		this.Saldo_Inicial = Saldo_Inicial;
-		this.Banco = Banco;
+		
 	}
 
+	
 	public double getSaldo(double Saldo_Inicial) {
 
 		if (Saldo_Inicial >= 0) {
@@ -73,19 +71,20 @@ public class Cuenta_Corriente {
 		return Saldo_Inicial;
 
 	}
+	
 
 	// METODO PARA DARLE VALOR A EL BANCO.
 	
-	public void setBanco(String Banco) {
-
-		this.Banco = Banco;
-
+	public void setBanco (String BancoNuevo) {
+		
+		Banco = BancoNuevo;
 	}
-
+	
 	// METODO PARA RECIBIR EL VALOR DE BANCO.
 	
 	public String getBanco() {
 
+		System.out.println("Nombre Del Banco: " + Banco);
 		return Banco;
 	}
 
@@ -95,10 +94,12 @@ public class Cuenta_Corriente {
 		System.out.println("Nombre: " + NombreD);
 
 		System.out.println("Dni: " + Dni);
-		
-		System.out.println("Banco Al Que Pertenece: " + Banco);
+				
+		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
+
 
 	}
+	
 
 	void Datos1() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR
 					// SOBRECARGADO).
@@ -108,9 +109,9 @@ public class Cuenta_Corriente {
 		System.out.println("Dni: " + Dni);
 
 		System.out.println("Saldo Disponible De La Cuenta: " + Saldo_Inicial);
+				
+		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
+
 		
-		System.out.println("Banco Al Que Pertenece: " + Banco);
-
-
 	}
 }
