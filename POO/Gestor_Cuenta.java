@@ -1,23 +1,27 @@
 package POO;
 
+
 public class Gestor_Cuenta {
 
 	public String NombGestor; // NOMBRE DEL GESTOR PREDETERMINADO.
 
-	private String TelGestor; // NUMERO DE TELEFONO DEL GESTOR.
+	String TelGestor; // NUMERO DE TELEFONO DEL GESTOR.
 
-	private double ImporteMax = 0; // IMPORTE MAXIMO DE LA CUENTA.
+	double ImporteMax = 0; // IMPORTE MAXIMO DE LA CUENTA.
+	
 
-	public Gestor_Cuenta(String NombGestor, String TelGestor) {
+	Gestor_Cuenta(String Nom, String Tel) {
 
-		this.NombGestor = NombGestor;
-		this.TelGestor = TelGestor;
+		this.NombGestor = Nom;
+		this.TelGestor = Tel;
 		this.ImporteMax = 10000;
 
 	}
+	
 
 	public void DatosGestor() {
 
+		
 		System.out.println("El Nombre Del Gestor De Tu Cuenta Es: " + NombGestor);
 
 		System.out.println("El Numero De Tu Gestor Para Resolver Cualquier Incidencia Es: " + TelGestor);
