@@ -20,6 +20,7 @@ public class Cuenta_Corriente {
 	static private String BancoNuevo; // METODO PARA CAMBIARLE EL NOMBRE AL BANCO PREDETERMINADO.
 
 	Gestor_Cuenta gestor;
+		
 
 	Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR PADRE.
 
@@ -88,22 +89,19 @@ public class Cuenta_Corriente {
 
 	}
 
-	/*
-	 * public void getGestor () {
-	 * 
-	 * System.out.println("Tu Numero Gestor Es: " + gestor);
-	 * 
-	 * }
-	 */
-
+	
 	void DatosConGestor() {
 		// TODO Auto-generated method stub
 
 		System.out.println("Nombre: " + NombreD);
 
 		System.out.println("Dni: " + Dni);
+		
+		System.out.println("El Nombre Del Gestor De Tu Cuenta Es: " + gestor.NombGestor);
 
-		//System.out.println("Tu Numero Gestor Es: " + gestor);
+		System.out.println("El Numero De Tu Gestor Para Resolver Cualquier Incidencia Es: " + gestor.TelGestor);
+
+		System.out.println("El Importe Maximo De Tu Cuenta Es: " + gestor.ImporteMax + " €");
 
 	}
 
@@ -145,5 +143,9 @@ public class Cuenta_Corriente {
 		//System.out.println("Tu Numero Gestor Es: " + gestor);
 
 	}
+	
+	
+	
+	
 
 }
