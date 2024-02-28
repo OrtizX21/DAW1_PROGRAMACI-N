@@ -12,7 +12,7 @@ public class Llamada_Objetos {
 
 		CuentaAhorro.getBanco();
 
-		CuentaAhorro.Datos();
+		CuentaAhorro.Datos1();
 
 		CuentaAhorro.getSaldo(8000);
 
