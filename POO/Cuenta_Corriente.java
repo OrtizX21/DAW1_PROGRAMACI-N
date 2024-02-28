@@ -1,11 +1,15 @@
 package POO;
 
-/*En la clase CuentaCorriente sobrecargar los constructores para poder crear objetos
-- con el DNI del titular de la cuenta y un saldo inicial
-- con el DNI, nombre y el saldo inicial
-Escribir un programa que compruebe el funcionamiento de los métodos*/
 
-public class Cuenta_Corriente {
+//CON EL PUBLIC SE PUEDEN VER ATRIBUTOS Y METODOS DESDE CUALQUIER CLASE
+	// (CARPETA O PAQUETE).
+	
+	// CON EL PRIVATE SOLO SE PUEDEN VER METODOS Y ATRIBUTOS DENTRO DESDE ESE MISMA
+	// RUTA O CARPETA.
+	// Y SIN NINGUNO DE ELLOS SE VEN SOLO DENTRO DE ESE MISMO PAQUETE.
+
+
+class Cuenta_Corriente {
 
 	String Dni; // DNI TITULAR.
 
@@ -20,22 +24,8 @@ public class Cuenta_Corriente {
 	static private String BancoNuevo; // METODO PARA CAMBIARLE EL NOMBRE AL BANCO PREDETERMINADO.
 
 	Gestor_Cuenta gestor;
-		
-
-	Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR PADRE.
-
-		this.Dni = Dni;
-		this.NombreD = Nombre;
-
-	}
 	
-	// CON EL PUBLIC SE PUEDEN VER ATRIBUTOS Y METODOS DESDE CUALQUIER CLASE
-	// (CARPETA O PAQUETE).
 	
-	// CON EL PRIVATE SOLO SE PUEDEN VER METODOS Y ATRIBUTOS DENTRO DESDE ESE MISMA
-	// RUTA O CARPETA.
-	// Y SIN NINGUNO DE ELLOS SE VEN SOLO DENTRO DE ESE MISMO PAQUETE.
-
 	public Cuenta_Corriente() { // ASIGNACION VALORES CONSTRUCTOR.
 
 		Dni = "";
@@ -44,14 +34,57 @@ public class Cuenta_Corriente {
 		Banco = "";
 
 	}
-
-	public Cuenta_Corriente(String Dni, String Nombre, Gestor_Cuenta gestor) { // CONSTRUCTOR PADRE.
+		
+	
+	Cuenta_Corriente(String Dni, String Nombre, Gestor_Cuenta gestor) { // CONSTRUCTOR PADRE.
 
 		this.Dni = Dni;
 		this.NombreD = Nombre;
 		this.gestor = gestor;
 
 	}
+	
+	public Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR SOBRECARGADO.
+
+		this.Dni = Dni;
+		this.NombreD = Nombre;
+
+	}
+	
+	public void setGestor(Gestor_Cuenta Asigna) {
+
+		this.gestor = Asigna;
+
+	}
+	
+	void informacionG () {
+		
+		if (gestor == null) {
+			
+			System.out.println("Cuenta Sin Gestor");
+			
+			System.out.println("Nombre Del Titular De La Cuenta: " + NombreD);
+			 
+			System.out.println("Dni Del Titular: " + Dni);
+						
+		}
+		
+		else {
+			
+			System.out.println("Nombre Del Titular De La Cuenta: " + NombreD);
+			 
+			System.out.println("Dni Del Titular: " + Dni);
+			
+			System.out.println("Informacion Del Gestor: ");
+			
+			gestor.DatosG();
+			
+			System.out.println();
+		
+	
+		}
+	}
+	
 
 	public double getSaldo(double Saldo_Inicial) {
 
@@ -82,39 +115,8 @@ public class Cuenta_Corriente {
 		return Banco;
 
 	}
-
-	public void setGestor(Gestor_Cuenta Asigna) {
-
-		gestor = Asigna;
-
-	}
-
 	
-	void DatosConGestor() {
-		// TODO Auto-generated method stub
-
-		System.out.println("Nombre: " + NombreD);
-
-		System.out.println("Dni: " + Dni);
-		
-		System.out.println("El Nombre Del Gestor De Tu Cuenta Es: " + gestor.NombGestor);
-
-		System.out.println("El Numero De Tu Gestor Para Resolver Cualquier Incidencia Es: " + gestor.TelGestor);
-
-		System.out.println("El Importe Maximo De Tu Cuenta Es: " + gestor.ImporteMax + " €");
-
-	}
-
-	void Datos() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR PADRE).
-
-		System.out.println("Nombre: " + NombreD);
-
-		System.out.println("Dni: " + Dni);
-
-		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
-
-	}
-
+	
 	public void Datos1() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR
 		// SOBRECARGADO).
 
@@ -126,26 +128,6 @@ public class Cuenta_Corriente {
 
 		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
 
-		//System.out.println("Tu Numero Gestor Es: " + gestor);
-
-	}
-
-	// DATOS DE LA PERSONA QUE LLAMO DESDE EL OTRO PAQUETE.
-
-	public void Datos2() {// FUNCION QUE HAGO PARA MOSTRAR LOS DATOS DESDE OTRO PAQUETE AFUERA.
-
-		System.out.println("Nombre: " + NombreP);
-
-		System.out.println("Dni: " + Dni);
-
-		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
-
-		//System.out.println("Tu Numero Gestor Es: " + gestor);
-
 	}
 	
-	
-	
-	
-
 }
