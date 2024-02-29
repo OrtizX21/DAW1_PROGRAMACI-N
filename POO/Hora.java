@@ -15,7 +15,7 @@ public class Hora {
 
 	private int A;
 
-	Hora(int Hor, int Min, int Seg) { // CONSTRUCTOR PADRE.
+	Hora(int Hor,int Min,int Seg) { // CONSTRUCTOR PADRE.
 
 		/*
 		 * if (Seg <= 0 || Seg <= 58) {
@@ -24,7 +24,7 @@ public class Hora {
 		 */
 		
 		
-		if (Min == 60 && Seg == 60) {
+		if (Min == 59 && Seg == 59) {
 			
 			Hor ++;
 			Min = 00;
@@ -64,7 +64,7 @@ public class Hora {
 		return Hor;
 	}
 
-	void setMin(int Min) {
+	void setMin(short Min) {
 
 		if (Min <= 0 && Min <= 59) {
 		this.Min = Min;
@@ -119,15 +119,43 @@ public class Hora {
 
 	void MostrarInformacion() {
 
-		if (Hor >= 24 || Min >= 60 || Seg >= 61) {
+		if (Hor >= 24 || Min >= 60 || Seg >= 60) {
 			
 			System.out.println("Operacion Invalida");
 		}
 		
-		else {
+		else if (Hor >= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9){
 			
-			System.out.println("La Hora Es: " + Hor + " " + "Minutos: " + Min + " " + "Segundos: " + Seg);
+			System.out.println("A La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
+
+		}
+		
+		else if (Hor >= 0 && Hor <= 9 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
 			
+			System.out.println("B La Hora Es: " + "0" + Hor + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
+
+		}
+		
+		
+		else if (Hor >= 0 && Hor <= 9 && Seg >= 0 && Seg <= 9)  {
+			
+			System.out.println("C La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);
+			
+		}
+		
+		else if (Hor >= 12 && Hor <= 23 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 9) {
+			
+			System.out.println("D La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
+		}
+		
+		else if (Hor <= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
+			
+			System.out.println("E La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);			
+		}
+		
+		else if (Hor >= 10 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 59 ) {
+			
+			System.out.println("F La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
 		}
 
 	}
