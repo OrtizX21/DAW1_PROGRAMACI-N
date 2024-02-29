@@ -59,7 +59,16 @@ public class Hora {
 
 	public int getHor() {
 
-		System.out.println(Hor);
+		if (Hor >= 0 && Hor <= 9) {
+			
+			System.out.println("La Hora Es: 0" + Hor);
+
+		}
+		
+		else {
+			
+			System.out.println("La Hora Es: " + Hor);			
+		}
 
 		return Hor;
 	}
@@ -79,7 +88,16 @@ public class Hora {
 
 	public int getMin() {
 	
-		System.out.println(Min);
+		if (Min >= 0 && Min <= 9) {
+			
+			System.out.println("Los Minutos Son: 0" + Min);
+
+		}
+		
+		else {
+			
+			System.out.println("Los Minutos Son: " + Min);			
+		}
 
 		return Min;
 	}
@@ -98,8 +116,17 @@ public class Hora {
 
 	public int getSeg() {
 
-		System.out.println(Seg);
+		if (Seg >= 0 && Seg <= 9) {
+			
+			System.out.println("Los Segundos Son: 0" + Seg);
 
+		}
+		
+		else {
+			
+			System.out.println("Los Segundos Son: " + Seg);			
+		}
+		
 		return Seg;
 	}
 
@@ -112,7 +139,16 @@ public class Hora {
 
 	public int getA() {
 
-		System.out.println();
+		if (A >= 0 && A <= 9) {
+			
+			System.out.println("La Suma De Los Segundos Es: 0" + A);
+
+		}
+		
+		else {
+			
+			System.out.println("La Suma De Los Segundos Es: " + A);			
+		}
 		
 		return A;
 	}
@@ -126,38 +162,52 @@ public class Hora {
 		
 		else if (Hor >= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9){
 			
-			System.out.println("A La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
 
 		}
 		
 		else if (Hor >= 0 && Hor <= 9 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
 			
-			System.out.println("B La Hora Es: " + "0" + Hor + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
+			System.out.println("La Hora Es: " + "0" + Hor + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
 
 		}
 		
-		
 		else if (Hor >= 0 && Hor <= 9 && Seg >= 0 && Seg <= 9)  {
 			
-			System.out.println("C La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);
+			System.out.println("La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);
+			
+		}
+		
+		else if (Hor >= 0 || Hor <= 9 || Min >= 0 && Min <= 9 || Seg >= 0 || Seg <= 9)  {
+			
+			System.out.println("La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "" + Seg);
 			
 		}
 		
 		else if (Hor >= 12 && Hor <= 23 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 9) {
 			
-			System.out.println("D La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
 		}
 		
 		else if (Hor <= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
 			
-			System.out.println("E La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);			
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);			
+		}
+		
+		else if (Hor >= 10 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 9 ) {
+			
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
 		}
 		
 		else if (Hor >= 10 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 59 ) {
 			
-			System.out.println("F La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "" + Seg);			
 		}
-
+		
+		else if (Hor >= 10 || Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9 ) {
+			
+			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "" + Seg);			
+		}
 	}
 
 }
