@@ -5,11 +5,11 @@ public class Main_Hora {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		
 		
 		Hora Tiempo1;
 		
-		Tiempo1 = new Hora (12, 59, 57);
+		Tiempo1 = new Hora (12, 9, 9);
 				
 		Tiempo1.MostrarInformacion();
 		
