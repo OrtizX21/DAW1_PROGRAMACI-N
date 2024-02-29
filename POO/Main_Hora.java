@@ -9,11 +9,19 @@ public class Main_Hora {
 		
 		Hora Tiempo1;
 		
-		Tiempo1 = new Hora (12, 9, 9);
+		Tiempo1 = new Hora (24, 10, 9);
 				
 		Tiempo1.MostrarInformacion();
 		
+		Tiempo1.getHor();
+		
+		Tiempo1.getMin();
+		
+		Tiempo1.getSeg();
+		
 		Tiempo1.setA(1);
+		
+		Tiempo1.getA();
 
 		Tiempo1.MostrarInformacion();
 		
