@@ -9,7 +9,7 @@ public class Main_Hora {
 		
 		Hora Tiempo1;
 		
-		Tiempo1 = new Hora (10, 55, 0);
+		Tiempo1 = new Hora (12, 59, 57);
 				
 		Tiempo1.MostrarInformacion();
 		
