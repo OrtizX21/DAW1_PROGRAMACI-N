@@ -1,21 +1,26 @@
 package POO;
 
-public class Llamada_Objetos {
+public class Main_Cuenta_Corriente {
 
 	public static void main(String[] args) {
 
 		Cuenta_Corriente CuentaAhorro;
 
-		CuentaAhorro = new Cuenta_Corriente("AX345621", "Felipe Ortiz"); // HAGO LA LLAMADA AL CONSTRUCTOR PADRE.
+		CuentaAhorro = new Cuenta_Corriente("AX345621", "Felipe Ortiz", 100.0); // HAGO LA LLAMADA AL CONSTRUCTOR PADRE.
+
+		CuentaAhorro.Datos();
 
 		CuentaAhorro.setBanco("Santander");
 
 		CuentaAhorro.getBanco();
+		
+		CuentaAhorro.Ingresar(8000);
+		
+		CuentaAhorro.getSaldo();
+		
+		CuentaAhorro.Retirar(9000.0);
 
-		CuentaAhorro.Datos1();
-
-		CuentaAhorro.getSaldo(8000);
-
+		
 		// AMBOS SE VEN POR QUE UNO ESTA PUBLICO Y SE PUEDE VER DESDE OTRO PAQUETE
 		// AFUERA (DNI) Y (NOMBRED) QUE NO TIENE NINGUNA RESTRICCION
 		// Y SOLO SE VE EN EL PAQUETE.
