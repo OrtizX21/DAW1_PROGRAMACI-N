@@ -1,39 +1,47 @@
 package POO;
-
+import java.util.*;
 
 public class Main_Hora {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		
-		
-		Hora Tiempo1;
-		
-		Tiempo1 = new Hora (24, 10, 9);
-				
-		Tiempo1.MostrarInformacion();
-		
-		Tiempo1.getHor();
-		
-		Tiempo1.getMin();
-		
-		Tiempo1.getSeg();
-		
-		Tiempo1.setA(1);
-		
-		Tiempo1.getA();
 
-		Tiempo1.MostrarInformacion();
+		Scanner sc = new Scanner (System.in);
 		
-		/*
-		 * Tiempo1.setHor(11);
-		 * 
-		 * Tiempo1.setMin(0);
-		 * 
-		 * Tiempo1.setSeg(10);
-		 * 
-		 * Tiempo1.setA(10);
-		 */
+		Hora Hora1 = new Hora ();
+		
+		System.out.println("Introduce La Hora: ");
+		int Datos = sc.nextInt();
+		Hora1.setHor(Datos);
+		System.out.println("\n");
+
+		
+		System.out.println("Introduce Los Minutos: ");
+		Datos = sc.nextInt();
+		Hora1.setMin(Datos);
+		System.out.println("\n");
+
+		
+		System.out.println("Introduce Los Segundos: ");
+		Datos = sc.nextInt();
+		Hora1.setSeg(Datos);
+		System.out.println("\n");
+
+		System.out.println("Ingresa Cuantos Segundos Quieres Incrementar: ");
+		int A = sc.nextInt();
+		System.out.println("\n");
+		
+		System.out.println("Hora Actual Con Los Segundos Incrementados:");
+		System.out.println();
+		
+		for (int i = 0; i <= A; i++) {
+			
+			System.out.println(Hora1.getHor() + ":" + Hora1.getMin() + ":" + Hora1.getSeg());
+			
+			Hora1.Segundos();
+		}
+		
+		sc.close();
 	}
 
 }
