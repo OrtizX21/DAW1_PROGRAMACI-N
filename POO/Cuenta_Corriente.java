@@ -9,7 +9,7 @@ package POO;
 	// Y SIN NINGUNO DE ELLOS SE VEN SOLO DENTRO DE ESE MISMO PAQUETE.
 
 
-class Cuenta_Corriente {
+public class Cuenta_Corriente {
 
 	String Dni; // DNI TITULAR.
 
@@ -17,7 +17,7 @@ class Cuenta_Corriente {
 
 	public String NombreP; // NOMBRE PERSONA.
 
-	private double Saldo_Inicial; // SALDO INCIAL DE LA CUENTA.
+	private double Saldo; // SALDO INCIAL DE LA CUENTA.
 
 	static String Banco = "BBVA"; // BANCO PREDETERMINADO NOMBRE DEL BANCO DEL TITULAR Y PERSONA.
 
@@ -30,25 +30,30 @@ class Cuenta_Corriente {
 
 		Dni = "";
 		NombreD = "";
-		Saldo_Inicial = 0;
+		Saldo = 0;
 		Banco = "";
 
 	}
 		
 	
-	Cuenta_Corriente(String Dni, String Nombre, Gestor_Cuenta gestor) { // CONSTRUCTOR PADRE.
+	Cuenta_Corriente(String Dni, String Nombre, Gestor_Cuenta gestor) { // CONSTRUCTOR PADRE (CUENTA BANCARIA CON GESTOR).
 
 		this.Dni = Dni;
 		this.NombreD = Nombre;
 		this.gestor = gestor;
-
 	}
 	
-	public Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR SOBRECARGADO.
+	Cuenta_Corriente(String Dni, String Nombre, double Saldo) { // CONSTRUCTOR SOBRECARGADO (UTILIZADO PARA MAIN CUENTA CORRIENTE).
 
 		this.Dni = Dni;
 		this.NombreD = Nombre;
+		this.Saldo = Saldo;
+	}
+	
+	Cuenta_Corriente(String Dni, String Nombre) { // CONSTRUCTOR SOBRECARGADO (UTILIZADO PARA CUENTA CORRIENTE CON GESTOR (MAIN_GESTOR)).
 
+		this.Dni = Dni;
+		this.NombreD = Nombre;
 	}
 	
 	public void setGestor(Gestor_Cuenta Asigna) {
@@ -85,18 +90,34 @@ class Cuenta_Corriente {
 		}
 	}
 	
+	// METODO PARA INGRESAR DINERO.
 
-	public double getSaldo(double Saldo_Inicial) {
-
-		if (Saldo_Inicial >= 0) {
-
-			this.Saldo_Inicial = Saldo_Inicial;
-
+	public double Ingresar (double Cantidad) {
+		
+		Saldo = Saldo + Cantidad;
+		
+		return Saldo;
+	}
+	
+	// METODO PARA RETIRAR DINERO.
+	
+	boolean Retirar (double Cantidad) {
+		
+		boolean Operacion = false;
+		
+		if (Saldo >= Cantidad) {
+			
+			Saldo = Saldo - Cantidad;
+			
+			Operacion = true;
 		}
-
-		System.out.println("El Saldo De Tu Cuenta Es: " + Saldo_Inicial + " €");
-
-		return Saldo_Inicial;
+		
+		else {
+			
+			System.out.println("Lo Sentimos No Se Puede Realizar La Operación Saldo Insifuciente.");
+		}
+		
+		return Operacion;
 	}
 
 	// METODO PARA DARLE VALOR A EL BANCO.
@@ -110,23 +131,32 @@ class Cuenta_Corriente {
 
 	public String getBanco() {
 
-		System.out.println("Nombre Del Banco Predeterminado: " + Banco);
+		System.out.println("Cambio De Banco Ahora Perteneces: " + BancoNuevo + ".");
 
 		return Banco;
 
 	}
 	
+	// 	METODO PARA OBTENER EL SALDO.
 	
-	public void Datos1() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR
+	public double getSaldo() {
+		
+		System.out.println("El Saldo De Tu Cuenta Es: " + Saldo + " €");
+		
+		return Saldo;
+	}
+	
+	
+	public void Datos() {// FUNCION PARA VER LOS VALORES ASIGNADOS EN LA OTRA CLASE (CONSTRUCTOR
 		// SOBRECARGADO).
 
-		System.out.println("Nombre: " + NombreP);
+		System.out.println("Nombre: " + NombreD + ".");
 
-		System.out.println("Dni: " + Dni);
+		System.out.println("Dni: " + Dni + ".");
 
-		System.out.println("Saldo Disponible De La Cuenta: " + Saldo_Inicial);
+		System.out.println("Saldo Incial De La Cuenta: " + Saldo + " €" + " .");
 
-		System.out.println("Cambio De Banco AHora Perteneces: " + BancoNuevo);
+		System.out.println("Nombre Del Banco Predeterminado: " + Banco + ".");
 
 	}
 	
