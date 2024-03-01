@@ -62,6 +62,11 @@ public class Comic {
 
 	boolean Prestamo() {
 
+		if (Disponibles == 0) {
+			
+			System.out.println("No Se Pueden Realizar Prestamos del Cómic No Hay Unidades Disponibles.");
+		}
+		
 		if (Disponibles > 0) {
 
 			this.Disponibles--;
@@ -78,6 +83,11 @@ public class Comic {
 
 	boolean Devolucion() {
 
+		if (Prestados == 0) {
+			
+			System.out.println("Todas Las Unidades Del Cómic Estan Disponibles.");
+		}
+		
 		if (Prestados > 0) {
 
 			this.Disponibles++;
@@ -93,6 +103,8 @@ public class Comic {
 	}
 
 	void Info() {
+		
+		Devolucion();
 
 		System.out.println("El Nombre Del Cómic Es: " + Titulo + ".");
 		System.out.println("El Número Del Cómic Es: " + NumComic + ".");
