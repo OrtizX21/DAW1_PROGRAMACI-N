@@ -21,18 +21,16 @@ public class Main_Comic {
 		
 		//////////////////////////////////////////////////////////////////
 		
-		Comic2 = new Comic ("Ashita No Joe", 180, 10, 9);
+		Comic2 = new Comic ("Ashita No Joe", 180, 0, 9);
 		
-		Comic2.Prestamo();
 		Comic2.Info();
 		
 		System.out.println();
 		
 		//////////////////////////////////////////////////////////////////
 
-		Comic3 = new Comic ("One Piece", 181, 1, 0 );
+		Comic3 = new Comic ("One Piece", 181, 10, 0);
 		
-		Comic3.Prestamo();
 		Comic3.Info();
 
 	}
