@@ -13,16 +13,16 @@ public class Hora {
 
 	private int Seg;
 
-	private int A;
+	
+	public void Segundos () {
 
-	Hora(int Hor,int Min,int Seg) { // CONSTRUCTOR PADRE.
-
-		/*
-		 * if (Seg <= 0 || Seg <= 58) {
-		 * 
-		 * Seg ++; }
-		 */
+		Seg++;
 		
+		if (Seg == 59) {
+			
+			Seg = 0;
+			Min ++;
+		}
 		
 		if (Min == 59 && Seg == 59) {
 			
@@ -36,19 +36,13 @@ public class Hora {
 
 			Hor = 0;
 		}
-
-		
-		this.Hor = Hor;
-		this.Min = Min;
-		this.Seg = Seg;
-		
-		
 	}
 
 	void setHor(int Hor) {
 
-		if (Hor <= 0 && Hor <= 23) {
-		this.Hor = Hor;
+		if (0 <= Hor && Hor <= 23) {
+		this.Hor = (byte) Hor;
+		
 		}
 		
 		else {
@@ -59,24 +53,13 @@ public class Hora {
 
 	public int getHor() {
 
-		if (Hor >= 0 && Hor <= 9) {
-			
-			System.out.println("La Hora Es: 0" + Hor);
-
-		}
-		
-		else {
-			
-			System.out.println("La Hora Es: " + Hor);			
-		}
-
 		return Hor;
 	}
 
-	void setMin(short Min) {
+	void setMin(int Min) {
 
-		if (Min <= 0 && Min <= 59) {
-		this.Min = Min;
+		if (0 <= Min && Min <= 59) {
+		this.Min = (byte) Min;
 		}
 		
 		else {
@@ -87,25 +70,14 @@ public class Hora {
 	}
 
 	public int getMin() {
-	
-		if (Min >= 0 && Min <= 9) {
-			
-			System.out.println("Los Minutos Son: 0" + Min);
-
-		}
-		
-		else {
-			
-			System.out.println("Los Minutos Son: " + Min);			
-		}
 
 		return Min;
 	}
 
 	void setSeg(int Seg) {
 
-		if (Seg <= 0 && Seg <= 59) {
-		this.Seg = Seg;
+		if (0 <= Seg && Seg <= 59) {
+		this.Seg = (byte) Seg;
 		}
 		
 		else {
@@ -116,98 +88,6 @@ public class Hora {
 
 	public int getSeg() {
 
-		if (Seg >= 0 && Seg <= 9) {
-			
-			System.out.println("Los Segundos Son: 0" + Seg);
-
-		}
-		
-		else {
-			
-			System.out.println("Los Segundos Son: " + Seg);			
-		}
-		
 		return Seg;
 	}
-
-	void setA(int A) {
-
-		this.A = A;
-
-		Seg = A += Seg;
-	}
-
-	public int getA() {
-
-		if (A >= 0 && A <= 9) {
-			
-			System.out.println("La Suma De Los Segundos Es: 0" + A);
-
-		}
-		
-		else {
-			
-			System.out.println("La Suma De Los Segundos Es: " + A);			
-		}
-		
-		return A;
-	}
-
-	void MostrarInformacion() {
-
-		if (Hor >= 24 || Min >= 60 || Seg >= 60) {
-			
-			System.out.println("Operacion Invalida");
-		}
-		
-		else if (Hor >= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9){
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
-
-		}
-		
-		else if (Hor >= 0 && Hor <= 9 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
-			
-			System.out.println("La Hora Es: " + "0" + Hor + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);
-
-		}
-		
-		else if (Hor >= 0 && Hor <= 9 && Seg >= 0 && Seg <= 9)  {
-			
-			System.out.println("La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);
-			
-		}
-		
-		else if (Hor >= 0 || Hor <= 9 || Min >= 0 && Min <= 9 || Seg >= 0 || Seg <= 9)  {
-			
-			System.out.println("La Hora Es: " + "0" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "" + Seg);
-			
-		}
-		
-		else if (Hor >= 12 && Hor <= 23 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 9) {
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
-		}
-		
-		else if (Hor <= 12 && Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9) {
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "0" + Seg);			
-		}
-		
-		else if (Hor >= 10 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 9 ) {
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "0" + Seg);			
-		}
-		
-		else if (Hor >= 10 && Min >= 10 && Min <= 59 && Seg >= 0 && Seg <= 59 ) {
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "" + Min + " Segundos: " + "" + Seg);			
-		}
-		
-		else if (Hor >= 10 || Hor <= 23 && Min >= 0 && Min <= 9 && Seg >= 0 && Seg <= 9 ) {
-			
-			System.out.println("La Hora Es: " + "" + Hor  + " Minutos: " + "0" + Min + " Segundos: " + "" + Seg);			
-		}
-	}
-
 }
