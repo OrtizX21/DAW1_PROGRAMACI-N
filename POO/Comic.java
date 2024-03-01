@@ -4,17 +4,16 @@ public class Comic {
 
 	private String Titulo; // TITULO DEL COMIC.
 	private int NumComic; // NUMERO DEL COMIC.
-	private int EDisponibles; // EJEMPLARES DISPONIBLES.
-	private int EPrestados; // EJEMPLARES PRESTADOS.
-	//int Unidades; // UNIDADES QUE SE PRESTAN DE LOS METODOS SET Y GET
-	//int Devueltos; // UNIDADES QUE SE REGRESAN DESDE LOS METODOS SET Y GET
+	private int Disponibles; // EJEMPLARES DISPONIBLES.
+	private int Prestados; // EJEMPLARES PRESTADOS.
+	
 
 	Comic(String Titulo, int NumComic, int Edisponibles, int EPrestados) {
 
 		this.Titulo = Titulo;
 		this.NumComic = NumComic;
-		this.EDisponibles = Edisponibles;
-		this.EPrestados = EPrestados;
+		this.Disponibles = Edisponibles;
+		this.Prestados = EPrestados;
 	}
 
 	void setTitulo(String nomt) {
@@ -41,101 +40,64 @@ public class Comic {
 
 	void setEDisponibles(int Disponible) {
 
-		Disponible = EDisponibles;
+		Disponible = Disponibles;
 	}
 
 	int getEdisponibles() {
 
-		System.out.println("Cantidades Disponibles Del Cómic Es: " + EDisponibles);
-		return EDisponibles;
+		System.out.println("Cantidades Disponibles Del Cómic Es: " + Disponibles);
+		return Disponibles;
 	}
 
-	void setEPrestados(int Prestados) {
+	void setEPrestados(int EPrestados) {
 
-		Prestados = EPrestados;
+		EPrestados = Prestados;
 	}
 
 	int getEPrestados() {
 
-		System.out.println("Cantidades Prestadas Del Cómic Es: " + EPrestados);
-		return EPrestados;
+		System.out.println("Cantidades Prestadas Del Cómic Es: " + Prestados);
+		return Prestados;
 	}
-	
-	int Prestamo (int Eprestados) {
-		
-		EDisponibles --;
-		EDisponibles -= EPrestados;
-		
-		return EDisponibles;
+
+	boolean Prestamo() {
+
+		if (Disponibles > 0) {
+
+			this.Disponibles--;
+			this.Prestados++;
+			return true;
+
+		}
+
+		else {
+
+			return false;
+		}
 	}
-	
-	int Devolucion (int EDisponibles) {
-		
-		EPrestados += EDisponibles;
-		
-		return EPrestados;
-		
+
+	boolean Devolucion() {
+
+		if (Prestados > 0) {
+
+			this.Disponibles++;
+			this.Prestados--;
+			return true;
+			
+		}
+
+		else {
+
+			return false;
+		}
 	}
-	/*
-	 * void getPrestamo () {
-	 * 
-	 * boolean Operacion = false;
-	 * 
-	 * 
-	 * if (Operacion == true) {
-	 * 
-	 * while (EDisponibles != 0) {
-	 * 
-	 * Unidades -= EDisponibles;
-	 * 
-	 * System.out.println("Puedes Realizar El Prestamo Del Cómic."); } }
-	 * 
-	 * else if (EDisponibles == 0) {
-	 * 
-	 * Operacion = false;
-	 * 
-	 * System.out.println("No Hay Unidades Disponibles Del Cómic Para Prestamo."); }
-	 * 
-	 * System.out.println("Se Han Prestado Esta Cantidad De Cómics: " +
-	 * EDisponibles);
-	 * 
-	 * }
-	 * 
-	 * int setDevolucion (int Devuelto) {
-	 * 
-	 * EPrestados += Devuelto;
-	 * 
-	 * return EPrestados; }
-	 * 
-	 * void getDevolucion () {
-	 * 
-	 * boolean Regresado = false;
-	 * 
-	 * if (Regresado == true) {
-	 * 
-	 * while (EPrestados != 0) {
-	 * 
-	 * Devueltos += EPrestados;
-	 * 
-	 * } } else if (EPrestados == 0) {
-	 * 
-	 * Regresado = false;
-	 * 
-	 * System.out.println("No Se Han Regresado Unidades Del Cómic"); }
-	 * 
-	 * System.out.println("Se Han Devuelto Esta Cantidad De Cómics: " +
-	 * EDisponibles);
-	 * 
-	 * 
-	 * 
-	 * }
-	 */
-	
-	void Info () {
-		
-		System.out.println("El Nombre Del Cómic Es: " + Titulo);
-		System.out.println("El Número Del Cómic Es: " + NumComic);
-		System.out.println("Cantidades Disponibles Del Cómic Es: " + EDisponibles);
-		System.out.println("Cantidades Prestadas Del Cómic Es: " + EPrestados);
+
+	void Info() {
+
+		System.out.println("El Nombre Del Cómic Es: " + Titulo + ".");
+		System.out.println("El Número Del Cómic Es: " + NumComic + ".");
+		System.out.println("Cantidades Disponibles Del Cómic Es: " + Disponibles + ".");
+		System.out.println("Cantidades Prestadas Del Cómic Es: " + Prestados + ".");
+
 	}
-	}
+}
