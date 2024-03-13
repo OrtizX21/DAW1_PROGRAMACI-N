@@ -4,79 +4,68 @@ public class Cafetera {
 
 	private int CapacidadMaxima;
 	private int CantidadActual;
-
-	Cafetera() {
-
-		this.CantidadActual = 0;
+	
+	Cafetera () {
+		
 		this.CapacidadMaxima = 1000;
-
-	}
-
-	Cafetera(int actual) {
-
-		this.CapacidadMaxima = actual;
-
-	}
-
-	Cafetera(int actual, int maximo) {
-
-		this.CantidadActual = actual;
-		this.CapacidadMaxima = maximo;
-
-		if (CantidadActual > CapacidadMaxima) {
-
-			System.out.println("Esta La Cafetera LLena");
-		}
-
-		else {
-
-			System.out.println("Se Esta Preparando El Café");
-		}
-
-	}
-
-	void llenarCafetera() {
-
-		CapacidadMaxima = CantidadActual;
-	}
-
-	int servirTaza(int taza) {
-
-		if (taza < CapacidadMaxima) {
-
-			this.CantidadActual += taza;
-
-			System.out.println("No Alcanza Para LLenarse La Taza Agregando Café: " + CantidadActual + " C.C.");
-		}
-
-		else {
-
-			System.out.println("Sirviendo Cafecito");
-		}
-
-		return taza;
-	}
-
-	void vaciarCafetera() {
-
 		this.CantidadActual = 0;
 	}
-
-	int agregarCafe(int Volumen) {
-
-		Volumen = CantidadActual;
-		return Volumen;
+	
+	Cafetera (int CapacidadMax) {
+		
+		this.CapacidadMaxima = CapacidadMax;
+		CapacidadMax = CantidadActual;
+	}
+	
+	Cafetera (int CapacidadMax, int CantActual) {
+		
+		this.CapacidadMaxima = CapacidadMax;
+		this.CantidadActual = CantActual;
+		
+		if (CantidadActual > CapacidadMaxima) {
+			
+			this.CantidadActual = CapacidadMaxima;
+		}
+	}
+	
+	void llenarCafetera () {
+		
+		this.CantidadActual = CapacidadMaxima;
+	}
+	
+	int servirTaza (int Taza) {
+		
+		this.CantidadActual += Taza;
+		
+		if (Taza < CapacidadMaxima) {
+			
+			System.out.println("Se Agrego Mas Café A La Taza: " + CantidadActual);
+		}
+		
+		else {
+			
+			System.out.println("Ya Esta Llena La Taza De Café");
+		}
+		
+		return Taza;
+	}
+	
+	int agregarCafe (int Cafes) {
+		
+		this.CapacidadMaxima += Cafes;
+		System.out.println("Se Han Agregado Esta Cantidad De Cafés: " + CapacidadMaxima);
+		return Cafes;
 	}
 
 	@Override
 	public String toString() {
-		return "Cafetera La Capacidad Máxima De Esta Es: " + CapacidadMaxima
-				+ " C.C: , Cantidad Actual De La Cafetera: " + CantidadActual + " C.C" + "\n";
+		return "Cafetera La Capacidad Máxima De Esta Es: " + CapacidadMaxima + " C.C: , Cantidad Actual De La Cafetera: " + CantidadActual + " C.C" + "\n";
 	}
-
-	void info() {
-
-		System.out.println("Cantidad Actual De La Cafetera: " + CantidadActual + " C.C.");
-		System.out.println("Cantidad Máxima De La Cafetera: " + CapacidadMaxima + " C.C.");
+	
+	void Informacion () {
+		
+		System.out.println("Cantidad Actual De Cafes En La Cafetera: " + CantidadActual);
+		System.out.println("Capacidad Maxima De La Cafetera: " + CapacidadMaxima);
 	}
+	
 }
