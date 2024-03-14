@@ -21,7 +21,7 @@ public class Main_Cafetera {
 		
 		// CONSTRUCTOR EN EL CUAL LA CANTIDAD ACTUAL ES MAYOR A LA CAPACIDAD.
 		
-		Cafetera Caf3 = new Cafetera (1200, 1500);
+		Cafetera Caf3 = new Cafetera (2000, 1200);
 		Caf3.Informacion();
 		Caf3.llenarCafetera();
 		Caf3.servirTaza(150);
