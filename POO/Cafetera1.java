@@ -14,7 +14,7 @@ public class Cafetera {
 	Cafetera (int CapacidadMax) {
 		
 		this.CapacidadMaxima = CapacidadMax;
-		CapacidadMax = CantidadActual;
+		this.CantidadActual = CapacidadMax;
 	}
 	
 	Cafetera (int CapacidadMax, int CantActual) {
@@ -26,6 +26,11 @@ public class Cafetera {
 			
 			this.CantidadActual = CapacidadMaxima;
 		}
+		
+		else {
+			
+			this.CantidadActual = CantActual;
+		}
 	}
 	
 	void llenarCafetera () {
@@ -33,28 +38,43 @@ public class Cafetera {
 		this.CantidadActual = CapacidadMaxima;
 	}
 	
+	void vaciarCafetera () {
+		
+		this.CantidadActual = 0;
+	}
+	
 	int servirTaza (int Taza) {
-		
-		this.CantidadActual += Taza;
-		
-		if (Taza < CapacidadMaxima) {
+				
+		if (CantidadActual <= CapacidadMaxima) {
 			
-			System.out.println("Se Agrego Mas Café A La Taza: " + CantidadActual);
+			CantidadActual = CantidadActual - Taza;
+			System.out.println("Se Disminuyo El Café De La Taza: " + CantidadActual);
+			System.out.println("Capacidad Actual De La Cafetera: " + CapacidadMaxima);
 		}
 		
 		else {
 			
+			this.CantidadActual = 0;
 			System.out.println("Ya Esta Llena La Taza De Café");
 		}
 		
-		return Taza;
+		return this.CantidadActual;
 	}
 	
 	int agregarCafe (int Cafes) {
 		
-		this.CapacidadMaxima += Cafes;
-		System.out.println("Se Han Agregado Esta Cantidad De Cafés: " + CapacidadMaxima);
-		return Cafes;
+		if (CantidadActual + Cafes < CapacidadMaxima) {
+			
+			this.CantidadActual += Cafes;
+			System.out.println("Se Han Agregado Esta Cantidad De Cafés: " + CapacidadMaxima);
+		}
+		
+		else {
+			
+			CantidadActual = CapacidadMaxima;
+		}
+		
+		return CantidadActual;
 	}
 
 	@Override
