@@ -2,20 +2,23 @@ package POO;
 
 public class Punto {
 
-	private double x;
-	private double y;
+	double x;
+	double y;
 	
-	public Punto (double puntox, double puntoy) {
+	public Punto (double x, double y) {
 		
-		this.x = puntox;
-		this.y = puntoy;
+		this.x = x;
+		this.y = y;
 	}
 	
+	@Override
+	public String toString() {
+		return "Punto [x=" + x + ", y=" + y + "]";
+	}
 	
-	
-	void MostrarPuntos () {
+	void infoPuntos () {
 		
-		System.out.println("Eje X: " + x);
-		System.out.println("Eje Y: " + y);
+		System.out.println("Valores Del Punto X: " + x);
+		System.out.println("Valores Del Punto Y: " + y);
 	}
 }
