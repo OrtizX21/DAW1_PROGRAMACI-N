@@ -5,6 +5,7 @@ public class Punto {
 	double x;
 	double y;
 	
+	// CREAMOS EL OBJETOS DE TIPO PUNTO QUE SON LOS EJES.
 	public Punto (double x, double y) {
 		
 		this.x = x;
