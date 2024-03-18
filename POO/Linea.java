@@ -55,7 +55,7 @@ public class Linea {
 		boolean Paralela = false;
 		
 		double forma1 = (uno.PuntoA.y - dos.PuntoB.y)/(uno.PuntoA.x - dos.PuntoB.x);
-		double forma2 = (uno.PuntoA.y - dos.PuntoB.y)/(uno.PuntoA.x - dos.PuntoB.x);
+		double forma2 = (dos.PuntoA.y - uno.PuntoB.y)/(dos.PuntoA.x - uno.PuntoB.x);
 		
 		if (forma1 == forma2) {
 			
