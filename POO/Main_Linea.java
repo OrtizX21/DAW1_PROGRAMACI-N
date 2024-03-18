@@ -22,6 +22,12 @@ public class Main_Linea {
 
 		// CREO Y MUESTRO TODOS LAS LINEAS CON EL METODO TO STRING.
 		Linea MiLinea1 = new Linea (Punto1, Punto2);
+		
+		MiLinea1.mueveArriba(0.0);
+		MiLinea1.mueveAbajo(0.0);
+		MiLinea1.mueveIzquierda(0.0);
+		MiLinea1.mueveDerecha(0.0);
+		
 		Linea MiLinea2 = new Linea (Punto3, Punto4);
 		
 		System.out.println(MiLinea1 + "\n");
