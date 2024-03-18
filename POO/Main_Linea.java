@@ -1,49 +1,67 @@
 package POO;
 
-public class Main_Linea {
+public class Linea {
 
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
+	// CREAMOS DOS OBJETOS DE TIPO PUNTO QUE HACE REFERENCIA AL PLANO CARTESIANO VACIO.
+	private Punto PuntoA;
+	private Punto PuntoB;
+	
+	// CONSTRUCOTR PARA DAR LOS PUNTOS DE LAS DOS LINEAS X, Y
+	public Linea (Punto Punto1, Punto Punto2) {
 		
-		// CREO Y MUESTRO TODOS LOS PUNTOS CON EL METODO TO STRING.
-		Punto Punto1 = new Punto (0.0, 5.0);
-		System.out.println(Punto1);
+		this.PuntoA = Punto1;
+		this.PuntoB = Punto2;	
+	}
+	
+	@Override
+	public String toString() {
+		return "Linea [PuntoA = " + PuntoA + ", PuntoB = " + PuntoB + "]";
+	}
+	
+	// HACEMOS REFERENCIA DE AMBOS PUNTOS CON EL EJE X PARA MOVERLOS AL EJE POSITIVO.
+	double mueveDerecha (double xPositivo) {
 		
-		Punto Punto2 = new Punto (1.0, 1.0);
-		System.out.println(Punto2 + "\n");
+		this.PuntoA.x += xPositivo;
+		this.PuntoB.x += xPositivo;
+		return xPositivo;
+	}
+	// HACEMOS REFERENCIA DE AMBOS PUNTOS CON EL EJE X PARA MOVERLOS AL EJE NEGATIVO.
+	double mueveIzquierda (double xNegativo) {
 		
-		Punto Punto3 = new Punto (0.0, 5.0);
-		System.out.println(Punto3);
+		this.PuntoA.x -= xNegativo;
+		this.PuntoB.x -= xNegativo;
+		return xNegativo;
+	}
+	
+	// HACEMOS REFERENCIA DE AMBOS PUNTOS CON EL EJE X PARA MOVERLOS AL EJE POSITIVO.
+	double mueveArriba (double yPositivo) {
 		
-		Punto Punto4 = new Punto (1.0, 1.0);
-		System.out.println(Punto4);
-
-		System.out.println();
-
-		// CREO Y MUESTRO TODOS LAS LINEAS CON EL METODO TO STRING.
-		Linea MiLinea1 = new Linea (Punto1, Punto2);
+		this.PuntoA.y += yPositivo;
+		this.PuntoB.y += yPositivo;
+		return yPositivo;
+	}
+	
+	// HACEMOS REFERENCIA DE AMBOS PUNTOS CON EL EJE X PARA MOVERLOS AL EJE NEGATIVO.
+	double mueveAbajo (double yNegativo) {
 		
-		MiLinea1.mueveArriba(0.0);
-		MiLinea1.mueveAbajo(0.0);
-		MiLinea1.mueveIzquierda(0.0);
-		MiLinea1.mueveDerecha(0.0);
+		this.PuntoA.y -= yNegativo;
+		this.PuntoB.y -= yNegativo;
+		return yNegativo;
+	}	
+	
+	// METODO PARA COMPROBAR SI LAS LINEAS SON PARALELAS CON SU FORMULA.
+	public static boolean lineasParalelas (Linea uno, Linea dos) {
 		
-		Linea MiLinea2 = new Linea (Punto3, Punto4);
+		boolean Paralela = false;
 		
-		System.out.println(MiLinea1 + "\n");
-		System.out.println(MiLinea2 + "\n");
+		double forma1 = (uno.PuntoA.y - dos.PuntoB.y)/(uno.PuntoA.x - dos.PuntoB.x);
+		double forma2 = (dos.PuntoA.y - uno.PuntoB.y)/(dos.PuntoA.x - uno.PuntoB.x);
 		
-		// COMPRUEBO SI LAS LINEAS SON PARALELAS CON EL METODO LINEAS PARALELAS DE LA CLASE PUNTO.
-		boolean Paralelas = Linea.lineasParalelas(MiLinea1, MiLinea2);
-		
-		if (Paralelas == true) {
+		if (forma1 == forma2) {
 			
-			System.out.println("Las Lineas Son Paralelas: " + Paralelas + ".");
+			Paralela = true;
 		}
 		
-		else {
-			Paralelas = false;
-			System.out.println("Las Lineas No Son Paralelas: " + Paralelas + ".");
-		}		
+		return Paralela;
 	}
 }
