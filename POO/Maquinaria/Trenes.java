@@ -33,6 +33,8 @@ public class Trenes {
 		else {
 			
 			Vagones v1 = new Vagones (identificador, CargaActual, cargaMaxima, tipoMercancia);
+			Vagon[NumVagones] = v1;
+			NumVagones++;
 		}
 	}
 }
